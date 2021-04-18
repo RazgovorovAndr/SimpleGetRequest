@@ -1,13 +1,16 @@
-cmake_minimum_required(VERSION 3.13.2)
-project(SimpleGetRequest)
+project(MainLibrary)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_BUILD_TYPE Debug)
+Message(${PROJECT_NAME})
+Message(${CMAKE_CURRENT_SOURCE_DIR})
 
-set(HEADERS http_headers)
-set(SRC_LIST main.cpp)
+add_library(${PROJECT_NAME} STATIC)
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+target_sources(
+    ${PROJECT_NAME} PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/implementation/http_headers.cpp"
+)
 
-target_sources(${PROJECT_NAME} PRIVATE http_headers/http_headers.cpp)
-target_include_directories(${PROJECT_NAME} PRIVATE ${HEADERS})
+target_include_directories(
+    ${PROJECT_NAME} PUBLIC 
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    )
