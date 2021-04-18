@@ -34,4 +34,7 @@
 build
 
 #CMake
-CMakeList.txt
+CMakeLists.txt
+
+#dependencies
+dependencies
