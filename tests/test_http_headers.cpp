@@ -1,10 +1,9 @@
-#include <iostream>
 #include <gtest/gtest.h>
 #include <http_headers.hpp>
+#include <iostream>
 
-TEST(FIRST_SUITE, FIRST_TEST)
-{
+TEST(FIRST_SUITE, FIRST_TEST) {
    std::wcout << L"Test is running" << std::endl;
-   HttpHeaders{};
-   assert(true); 
+   http::HttpHeaders{};
+   assert(true);
 }
